@@ -5,7 +5,7 @@ import { SideNavbar } from '@/components/SideNavbar';
 
 export default function Home() {
   return (
-    <main className='bg-black h-screen text-white'>
+    <main>
       <div className='container mx-auto px-9 py-10'>
         <Header />
 
