@@ -8,6 +8,7 @@ import {
   faCircleDot,
 } from '@fortawesome/free-solid-svg-icons';
 import cx from 'classnames';
+import { Card } from '../Card';
 
 const overviewOptions = [
   {
@@ -63,7 +64,7 @@ const navList = [
 
 export const SideNavbar = () => {
   return (
-    <div className='bg-zinc-900 px-4 py-6 rounded-lg'>
+    <Card customStyles='px-4 py-6'>
       {overviewOptions.map((option) => (
         <div
           key={option.id}
@@ -106,6 +107,6 @@ export const SideNavbar = () => {
           ))}
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
