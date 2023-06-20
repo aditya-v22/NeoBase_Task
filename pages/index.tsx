@@ -1,5 +1,6 @@
 import { AnalysisCard, AnalysisStatus } from '@/components/AnalysisCard';
 import { Header } from '@/components/Header';
+import { SessionActivity } from '@/components/SessionActivity';
 import { SideNavbar } from '@/components/SideNavbar';
 
 export default function Home() {
@@ -12,10 +13,10 @@ export default function Home() {
           <div className='flex gap-10'>
             <SideNavbar />
 
-            <div>
+            <div className='flex flex-col gap-8'>
               <div className='pt-5 text-4xl'>Session History</div>
 
-              <div className='flex gap-5 pt-8'>
+              <div className='flex gap-5'>
                 <AnalysisCard
                   count='10 H'
                   countPercentage='12.21'
@@ -41,6 +42,8 @@ export default function Home() {
                   title='Longest Sessions'
                 />
               </div>
+
+              <SessionActivity />
             </div>
           </div>
         </div>
