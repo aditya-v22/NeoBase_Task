@@ -9,15 +9,15 @@ export enum AnalysisStatus {
 interface AnalysisCardProps {
   title: string;
   status: AnalysisStatus;
+  label: string;
   count: string;
-  countPercentage: string;
 }
 
 export const AnalysisCard = ({
   title,
   status,
+  label,
   count,
-  countPercentage,
 }: AnalysisCardProps) => {
   return (
     <Card>
@@ -29,12 +29,12 @@ export const AnalysisCard = ({
           })}
         >
           {status === AnalysisStatus.INCREMENT ? '+' : '-'}
-          {countPercentage}%
+          {count}%
         </p>
       </div>
 
       <div className='pt-4 pb-6'>
-        <p className='text-lg'>{count}</p>
+        <p className='text-lg'>{label}</p>
       </div>
     </Card>
   );

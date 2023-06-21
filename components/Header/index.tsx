@@ -3,7 +3,12 @@ import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const Header = () => {
+interface HeaderProps {
+  instanceName: string;
+  instanceId: string;
+}
+
+export const Header = ({ instanceName, instanceId }: HeaderProps) => {
   return (
     <div className='sticky top-0 bg-black z-10'>
       <div className='w-full flex justify-between items-center pt-10 pb-5 border-b border-zinc-800'>
@@ -20,8 +25,8 @@ export const Header = () => {
 
         <div className='flex gap-5'>
           <div className='flex flex-col'>
-            <p className='text-3xl'>Node Moniker</p>
-            <p className='text-slate-500 text-sm'>21212323232322323232</p>
+            <p className='text-3xl'>{instanceName}</p>
+            <p className='text-slate-500 text-sm'>{instanceId}</p>
           </div>
 
           <div className='border-l border-gray-600' />

@@ -10,19 +10,6 @@ import {
 import cx from 'classnames';
 import { Card } from '../Card';
 
-const overviewOptions = [
-  {
-    id: '1878dace-3ae5-4082-8f46-5c672ae16b1e',
-    label: 'IP Address',
-    value: '136.251.15.107',
-  },
-  {
-    id: '346d6ff1-2195-4df9-9483-76fc797360a2',
-    label: 'Country',
-    value: 'Canada',
-  },
-];
-
 const navList = [
   {
     id: 'aa3fb118-2c14-4d46-9dd8-9f2217fdba8f',
@@ -62,51 +49,71 @@ const navList = [
   },
 ];
 
-export const SideNavbar = () => {
-  return (
-    <Card customStyles='px-4 py-6'>
-      {overviewOptions.map((option) => (
-        <div
-          key={option.id}
-          className='p-4 flex gap-4 border-b border-gray-700'
-        >
-          <p className='text-zinc-500 w-20'>{option.label}</p>
-          <p className='text-zinc-500'>:</p>
-          <p>{option.value}</p>
-        </div>
-      ))}
+interface SideNavbarProps {
+  ipAddress: string;
+  country: string;
+}
 
-      <div className='pt-10'>
-        <div className='flex flex-col gap-4'>
-          {navList.map((list) => (
-            <div
-              key={list.id}
-              className={cx(
-                'p-4 border rounded-2xl border-gray-700 bg-black-500 flex gap-10 justify-between items-center',
-                {
-                  'border-blue-500': list.active,
-                }
-              )}
-            >
-              <div className='flex gap-5 items-center'>
-                <div className='h-8 w-8 flex justify-center items-center bg-blue-500 rounded-full'>
-                  <FontAwesomeIcon
-                    icon={list.icon}
-                    size='sm'
-                  />
+export const SideNavbar = ({ ipAddress, country }: SideNavbarProps) => {
+  const overviewOptions = [
+    {
+      id: '1878dace-3ae5-4082-8f46-5c672ae16b1e',
+      label: 'IP Address',
+      value: ipAddress,
+    },
+    {
+      id: '346d6ff1-2195-4df9-9483-76fc797360a2',
+      label: 'Country',
+      value: country,
+    },
+  ];
+
+  return (
+    <div className='sticky top-20'>
+      <Card customStyles='px-4 py-6'>
+        {overviewOptions.map((option) => (
+          <div
+            key={option.id}
+            className='p-4 flex gap-4 border-b border-gray-700'
+          >
+            <p className='text-zinc-500 w-20'>{option.label}</p>
+            <p className='text-zinc-500'>:</p>
+            <p>{option.value}</p>
+          </div>
+        ))}
+
+        <div className='pt-10'>
+          <div className='flex flex-col gap-4'>
+            {navList.map((list) => (
+              <div
+                key={list.id}
+                className={cx(
+                  'p-4 border rounded-2xl border-gray-700 bg-black-500 flex gap-10 justify-between items-center',
+                  {
+                    '!border-blue-500': list.active,
+                  }
+                )}
+              >
+                <div className='flex gap-5 items-center'>
+                  <div className='h-8 w-8 flex justify-center items-center bg-blue-500 rounded-full'>
+                    <FontAwesomeIcon
+                      icon={list.icon}
+                      size='sm'
+                    />
+                  </div>
+
+                  <p className='text-zinc-500 font-medium'>{list.label}</p>
                 </div>
 
-                <p className='text-zinc-500 font-medium'>{list.label}</p>
+                <FontAwesomeIcon
+                  icon={faChevronRight}
+                  color='gray'
+                />
               </div>
-
-              <FontAwesomeIcon
-                icon={faChevronRight}
-                color='gray'
-              />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </Card>
+      </Card>
+    </div>
   );
 };
