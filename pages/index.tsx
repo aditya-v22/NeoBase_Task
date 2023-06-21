@@ -1,12 +1,13 @@
 import { AnalysisCard, AnalysisStatus } from '@/components/AnalysisCard';
 import { Header } from '@/components/Header';
 import { SessionActivity } from '@/components/SessionActivity';
+import { SessionHistory } from '@/components/SessionHistory';
 import { SideNavbar } from '@/components/SideNavbar';
 
 export default function Home() {
   return (
     <main>
-      <div className='container mx-auto px-9 py-10'>
+      <div className='container mx-auto px-9 pb-10'>
         <Header />
 
         <div className='pt-10'>
@@ -44,6 +45,8 @@ export default function Home() {
               </div>
 
               <SessionActivity />
+
+              <SessionHistory />
             </div>
           </div>
         </div>
