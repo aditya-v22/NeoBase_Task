@@ -1,4 +1,4 @@
-import { Sessions } from './Sessions';
+import { Sessions } from '../components/Sessions';
 
 export default function Home() {
   return (

@@ -1,14 +1,14 @@
 import { Header } from '@/components/Header';
 import { SideNavbar } from '@/components/SideNavbar';
 import React, { useEffect, useState } from 'react';
-import { InstanceOverview } from './api/instances/overview';
+import { InstanceOverview } from '../../pages/api/instances/overview';
 import { Loader } from '@/components/Loader';
 
-interface NavbarProps {
+interface NavbarWithHeaderProps {
   children: React.ReactNode;
 }
 
-export const Navbar = ({ children }: NavbarProps) => {
+export const NavbarWithHeader = ({ children }: NavbarWithHeaderProps) => {
   const [instanceOverview, setInstanceOverview] = useState<InstanceOverview>();
 
   const fetchInstanceOverview = async () => {
