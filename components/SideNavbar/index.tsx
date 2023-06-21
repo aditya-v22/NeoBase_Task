@@ -88,7 +88,7 @@ export const SideNavbar = ({ ipAddress, country }: SideNavbarProps) => {
               <div
                 key={list.id}
                 className={cx(
-                  'p-4 border rounded-2xl border-gray-700 bg-black-500 flex gap-10 justify-between items-center',
+                  'p-4 border rounded-2xl border-gray-700 bg-black-500 flex gap-10 justify-between items-center hover:border-gray-500 hover:cursor-pointer',
                   {
                     '!border-blue-500': list.active,
                   }

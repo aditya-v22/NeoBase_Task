@@ -50,7 +50,7 @@ export const columns = [
   columnHelper.accessor('dataConsumed', {
     cell: (info) => <BodyCell title={info.getValue()} />,
     header: () => <HeaderCell title='Data Consumed' />,
-    size: 200,
+    size: 180,
   }),
   columnHelper.accessor('nodeLocation', {
     cell: (info) => <BodyCell title={info.getValue()} />,
