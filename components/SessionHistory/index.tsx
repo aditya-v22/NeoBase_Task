@@ -1,44 +1,11 @@
+import { useEffect, useState } from 'react';
 import { createColumnHelper } from '@tanstack/react-table';
+import { SessionHistoryData } from '@/pages/api/sessions/history';
 import { BodyCell } from '../BodyCell';
 import { Card } from '../Card';
 import { HeaderCell } from '../HeaderCell';
 import { ReactTable } from '../ReactTable';
-
-interface SessionHistoryData {
-  startTime: string;
-  date: string;
-  duration: string;
-  nodeUsed: string;
-  dataConsumed: string;
-  nodeLocation: string;
-}
-
-const defaultData: SessionHistoryData[] = [
-  {
-    dataConsumed: '50MB',
-    date: '27-07-2023',
-    duration: '2.35sec',
-    nodeLocation: 'Singapore',
-    nodeUsed: 'Wireguard',
-    startTime: '11:42:23',
-  },
-  {
-    dataConsumed: '50MB',
-    date: '27-07-2023',
-    duration: '2.35sec',
-    nodeLocation: 'Singapore',
-    nodeUsed: 'Wireguard',
-    startTime: '11:42:23',
-  },
-  {
-    dataConsumed: '50MB',
-    date: '27-07-2023',
-    duration: '2.35sec',
-    nodeLocation: 'Singapore',
-    nodeUsed: 'Wireguard',
-    startTime: '11:42:23',
-  },
-];
+import { Loader } from '../Loader';
 
 const columnHelper = createColumnHelper<SessionHistoryData>();
 
@@ -74,15 +41,32 @@ const columns = [
 ];
 
 export const SessionHistory = () => {
+  const [histories, setHistories] = useState<SessionHistoryData[]>([]);
+
+  const fetchSessionHistory = async () => {
+    const historyRes = await fetch('/api/sessions/history');
+    const parsedHistoryRes = (await historyRes.json()) as SessionHistoryData[];
+
+    setHistories(parsedHistoryRes);
+  };
+
+  useEffect(() => {
+    fetchSessionHistory();
+  }, []);
+
   return (
     <Card customStyles='!px-0'>
       <p className='text-4xl px-4'>Session History</p>
 
       <div className='pt-5'>
-        <ReactTable
-          data={defaultData}
-          columns={columns}
-        />
+        {!!histories.length && (
+          <ReactTable
+            data={histories}
+            columns={columns}
+          />
+        )}
+
+        {!histories.length && <Loader />}
       </div>
     </Card>
   );
