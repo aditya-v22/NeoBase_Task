@@ -69,7 +69,7 @@ export const SideNavbar = ({ ipAddress, country }: SideNavbarProps) => {
   ];
 
   return (
-    <div className='sticky top-20'>
+    <div>
       <Card customStyles='px-4 py-6'>
         {overviewOptions.map((option) => (
           <div

@@ -38,7 +38,9 @@ export const Navbar = ({ children }: NavbarProps) => {
                 ipAddress={instanceOverview?.ipAddress}
               />
 
-              {children}
+              <div className='max-h-[calc(100vh-210px)] overflow-y-auto overflow-x-hidden scrollbar scrollbar-thumb-indigo-900 scrollbar-thumb-rounded scrollbar-w-1'>
+                {children}
+              </div>
             </div>
           </div>
         </div>
