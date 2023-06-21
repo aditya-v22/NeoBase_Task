@@ -1,6 +1,6 @@
 # NeoBase Taks
 
-This application(Sentinel) helps you to launch and manage nodes. You can see a live demo [here]()
+This application(Sentinel) helps you to launch and manage nodes. You can see a live demo [here](https://neo-base-task-cx7l.vercel.app/)
 
 ## Tech Stack
 
@@ -10,6 +10,8 @@ This application(Sentinel) helps you to launch and manage nodes. You can see a l
 4. `Chart.js` (4.3.0)
 5. `react-chartjs-2` (5.2.0)
 6. `React Table` (8.9.2)
+7. `Font Awesome`
+8. `Eslint`
 
 ## Requirement to run an application on local
 
