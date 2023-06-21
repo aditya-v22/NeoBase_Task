@@ -43,7 +43,7 @@ export default function handler(
       date: '27-07-2023',
       duration: '2.35sec',
       nodeLocation: 'Singapore',
-      nodeUsed: 'Wireguard',
+      nodeUsed: 'V2Ray',
       startTime: '11:42:23',
     },
     {
@@ -51,7 +51,7 @@ export default function handler(
       date: '27-07-2023',
       duration: '2.35sec',
       nodeLocation: 'Singapore',
-      nodeUsed: 'Wireguard',
+      nodeUsed: 'OpenVPN',
       startTime: '11:42:23',
     },
     {
@@ -59,7 +59,7 @@ export default function handler(
       date: '27-07-2023',
       duration: '2.35sec',
       nodeLocation: 'Singapore',
-      nodeUsed: 'Wireguard',
+      nodeUsed: 'V2Ray',
       startTime: '11:42:23',
     },
   ];
