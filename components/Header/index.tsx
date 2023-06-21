@@ -5,8 +5,8 @@ import Link from 'next/link';
 
 export const Header = () => {
   return (
-    <div className='sticky'>
-      <div className='w-full flex justify-between items-center'>
+    <div className='sticky top-0 bg-black z-10'>
+      <div className='w-full flex justify-between items-center pt-10 pb-5 border-b border-zinc-800'>
         <div className='flex items-center gap-8'>
           <FontAwesomeIcon
             icon={faArrowLeftLong}
